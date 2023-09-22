@@ -1,5 +1,6 @@
 #include<iostream>
-
+#include<stdio.h>
+/* USING CLASS*/
 using namespace std;
 class Date
 {

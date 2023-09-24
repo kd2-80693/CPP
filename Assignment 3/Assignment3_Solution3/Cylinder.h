@@ -12,7 +12,7 @@ private:
 
 public:
     Cylinder();
-    //Cylinder(double height , double radius );
+    Cylinder(double height , double radius );
     //Cylinder(double height = 0, double radius = 0);
     double getRadius();
     double getHeight();

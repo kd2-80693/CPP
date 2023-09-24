@@ -6,11 +6,10 @@ Cylinder::Cylinder()
     this->height = 0;
     this->radius = 0;
 }
-// Cylinder::Cylinder(double height, double radius)
-// {
-//     this->height = height;
-//     this->radius = radius;
-// }
+Cylinder::Cylinder(double height, double radius) : height(height) , radius(radius)
+{
+    
+}
 
 // Cylinder::Cylinder(double height = 0, double radius = 0)
 // {

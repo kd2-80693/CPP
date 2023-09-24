@@ -5,7 +5,7 @@
 using namespace std;
 int main()
 {
-    Cylinder cylinder;
+    Cylinder cylinder(2.0,3.0);
     Emenu flag;
     double radius;
     double height;

@@ -80,7 +80,7 @@ public:
     }
 
     // Parameterised constructor
-    Manager(int id, float sal, float bonus) : Employee::Employee(id, sal)
+    Manager(int id, float sal, float bonus) : Employee(id, sal)
     {
         this->bonus = bonus;
     }
@@ -144,7 +144,7 @@ public:
     }
 
     // Parameterised constructor
-    Salesman(int id, float sal, float comm) : Employee::Employee(id, sal)
+    Salesman(int id, float sal, float comm) : Employee(id, sal)
     {
         this->comm = comm;
     }
@@ -198,11 +198,12 @@ protected:
 class Sales_manager : Manager, Salesman
 {
 
+    public:
     // Member Functions
     Sales_manager()
     {
     }
-    Sales_manager(int id, float sal, float bonus, float comm) : Manager::Manager(id, sal, bonus)
+    Sales_manager(int id, float sal, float bonus, float comm) : Manager(id, sal, bonus)
     {
         Salesman::set_comm(comm);
     }
@@ -226,6 +227,7 @@ class Sales_manager : Manager, Salesman
 
 int main()
 {
-
+    Sales_manager sm(1,2000,999,777);
+    sm.display();
     return 0;
 }

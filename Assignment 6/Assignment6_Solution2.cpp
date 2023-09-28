@@ -66,7 +66,7 @@ public:
     }
 };
 
-class Manager : virtual public Employee
+class Manager : virtual protected Employee
 {
     // data members
 private:
@@ -130,7 +130,7 @@ protected:
 };
 
 // SalesMan class
-class Salesman : virtual public Employee
+class Salesman : virtual protected Employee
 {
     // data members
 private:

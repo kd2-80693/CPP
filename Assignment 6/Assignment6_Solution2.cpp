@@ -23,7 +23,6 @@ public:
     Employee(int id, float sal)
 
     {
-        cout << "EMPLOYEE CONSTRUCTOR " << endl;
         this->id = id;
         this->sal = sal;
     }
@@ -80,7 +79,7 @@ public:
     }
 
     // Parameterised constructor
-    Manager(int id, float sal, float bonus) : Employee(id, sal)
+    Manager(int id, float sal, float bonus) : Employee::Employee(id, sal)
     {
         this->bonus = bonus;
     }
@@ -112,14 +111,14 @@ public:
     void display()
     {
         Employee::display();
-        cout << "Bonus :" << endl;
+        cout << "Bonus :" << this->bonus << endl;
     }
 
     // Some protected Functions to maintain Abstraction
 protected:
     void display_manager()
     {
-        cout << "Bonus :" << endl;
+        cout << "Bonus :" << this->bonus << endl;
     }
 
     void accept_manager()
@@ -144,7 +143,7 @@ public:
     }
 
     // Parameterised constructor
-    Salesman(int id, float sal, float comm) : Employee(id, sal)
+    Salesman(int id, float sal, float comm) : Employee::Employee(id, sal)
     {
         this->comm = comm;
     }
@@ -176,14 +175,14 @@ public:
     void display()
     {
         Employee::display();
-        cout << "comm :" << endl;
+        cout << "comm :" << this->comm << endl;
     }
 
     // Some protected Functions to maintain Abstraction
 protected:
     void display_salesman()
     {
-        cout << "comm :" << endl;
+        cout << "comm :" << this->comm << endl;
     }
 
     void accept_salesman()
@@ -198,13 +197,14 @@ protected:
 class Sales_manager : Manager, Salesman
 {
 
-    public:
+public:
     // Member Functions
     Sales_manager()
     {
     }
-    Sales_manager(int id, float sal, float bonus, float comm) : Manager(id, sal, bonus)
+    Sales_manager(int id, float sal, float bonus, float comm) : Employee(id, sal)
     {
+        Manager::set_bonus(bonus);
         Salesman::set_comm(comm);
     }
 
@@ -227,7 +227,8 @@ class Sales_manager : Manager, Salesman
 
 int main()
 {
-    Sales_manager sm(1,2000,999,777);
+    Sales_manager sm(1, 2000, 222, 333);
     sm.display();
+
     return 0;
 }

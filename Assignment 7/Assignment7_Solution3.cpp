@@ -241,7 +241,7 @@ int menu()
 {
     int flag;
     cout << "-----------------------------------------" << endl;
-    cout << "WELCOME TO CPP - Shop billing" << endl;
+    cout << "WELCOME TO CPP - Employee management" << endl;
     cout << "0. Exit" << endl;
     cout << "1. Accept Employee " << endl;
     cout << "2. Display the count with respect to designation " << endl;

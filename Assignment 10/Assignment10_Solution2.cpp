@@ -149,6 +149,8 @@ int menu()
     cout << "1. Deposite " << endl;
     cout << "2. Withdraw " << endl;
     cout << "3. Display the account detais  " << endl;
+    cout << "4. Display ALL account detais in order " << endl;
+    cout << "5. Display ALL account detais in reverse order " << endl;
     cout << "Please enter your choice : ";
     cin >> flag;
     cout << "------------------------------------------" << endl;
@@ -223,6 +225,14 @@ int main()
                     arr[i].display();
                 }
             }
+            break;
+        case 4:
+            for (int i = 0; i < arr.size(); i++)
+                arr[i].display();
+            break;
+        case 5:
+            for (int i = arr.size() - 1; i >= 0; i--)
+                arr[i].display();
             break;
         default:
             cout << "Please Try Again :" << endl;
